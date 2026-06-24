@@ -830,6 +830,169 @@ bora_sanggal = create_lifestyle_page(
 """
 )
 
+# ===== 처인구 6개 생활권 =====
+
+# 11. 역북·김량장
+yeokbuk_gimnyangjang = create_lifestyle_page(
+    path="area/yeokbuk-gimnyangjang/",
+    title="역북·김량장 생활권 출장마사지｜용인역 중심 홈타이 안내",
+    desc="역북·김량장 생활권 출장마사지·홈타이 예약 전 처인구 동부 생활권을 확인하세요.",
+    h1="역북·김량장 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("역북·김량장", "")],
+    body_content="""
+<section>
+<h2>역북·김량장 생활권 소개</h2>
+<p><strong>역북·김량장 생활권</strong>은 용인시 처인구의 교통 중심 지역으로, 용인역을 중심으로 발전하고 있습니다. 용인경전철 및 신분당선 환승역인 용인역의 역세권과 주변 주거지가 통합된 생활권입니다. 교통 접근성이 우수하며 현대식 상업 시설과 주거 단지가 혼재되어 있습니다.</p>
+<p>역북·김량장 지역은 용인의 관문 역할을 하는 중요한 교통 거점이며, 안정적인 상업 활동이 이루어지는 지역입니다. 마사지 서비스 수요가 꾸준합니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>용인역</strong> — 광역 교통 거점</li>
+<li><strong>역북동</strong> — 상업·주거 혼합</li>
+<li><strong>김량장동</strong> — 주거 중심지</li>
+<li><strong>교통 중심지</strong> — 환승역 기능</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>광역 교통:</strong> 용인역은 용인경전철과 신분당선의 환승역으로 서울과 직결됩니다. 차량 이동 시간은 20-30분이며, 버스 노선이 매우 발달되어 있습니다.</p>
+<p><strong>상업 지구:</strong> 용인역 주변으로 대형 상업 건물, 음식점, 편의점이 밀집되어 있습니다. 24시간 편의시설이 충분하며 야간 영업 음식점이 많습니다.</p>
+<p><strong>주거 환경:</strong> 역 인근 주상복합과 주변 주택가가 조화를 이루고 있습니다. 교통 접근성이 우수하기 때문에 통근자들에게 인기가 높습니다.</p>
+<p><strong>거주민 특성:</strong> 30-50대 직장인과 가족이 주요 거주자이며, 교통을 우선시하는 중상위 소득층입니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>역북·김량장 생활권은 용인역 중심 지역입니다:</p>
+<ul>
+<li><strong>역세권:</strong> 용인역 출구 번호 정확히 안내</li>
+<li><strong>상업 건물:</strong> 역 인근 빌딩명 명확히</li>
+<li><strong>아파트:</strong> 주거 단지명과 동호수 확인</li>
+<li><strong>시간대:</strong> 야간(18:00-23:00) 수요 높음</li>
+<li><strong>교통 연결:</strong> 신분당선/경전철 환승 용이</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>역북·김량장 생활권 내 이동은 기본 요금에 포함됩니다. 인접 생활권으로의 이동:</p>
+<ul>
+<li>삼가·용인시청 방향: 5,000-10,000원</li>
+<li>포곡·에버랜드 방향: 15,000-20,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>역북·김량장 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/samga-yongin-cityhall/">삼가·용인시청 생활권</a></li>
+<li><a href="/area/pogok-everland/">포곡·에버랜드 생활권</a></li>
+<li><a href="/cheoin-gu/">처인구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
+
+# 12. 삼가·용인시청
+samga_yongin_cityhall = create_lifestyle_page(
+    path="area/samga-yongin-cityhall/",
+    title="삼가·용인시청 생활권 출장마사지｜시청 행정중심 홈타이 안내",
+    desc="삼가·용인시청 생활권 출장마사지·홈타이 예약 전 처인구 중심지를 확인하세요.",
+    h1="삼가·용인시청 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("삼가·용인시청", "")],
+    body_content="""
+<section>
+<h2>삼가·용인시청 생활권 소개</h2>
+<p><strong>삼가·용인시청 생활권</strong>은 용인시 처인구의 행정·상업 중심지로, 용인시청을 중심으로 발전하고 있습니다. 시청의 행정 기능과 주변 상업 시설, 주거 단지가 통합된 광역 생활권입니다. 처인구의 중심지로서 다양한 시설과 활발한 상업 활동이 특징입니다.</p>
+<p>삼가·용인시청 지역은 공공 기관과 민간 상업이 조화를 이루고 있으며, 꾸준한 인구 이동으로 서비스 수요가 안정적입니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>용인시청</strong> — 행정 중심</li>
+<li><strong>삼가동</strong> — 주거·상업 혼합</li>
+<li><strong>중앙동</strong> — 상업지구</li>
+<li><strong>주변 아파트</strong> — 주거 중심</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>행정 중심:</strong> 용인시청이 중심이 되어 공공 기관과 상업 시설이 집중되어 있습니다. 차량 이동 시간은 20-30분이며, 시내버스 노선이 많습니다.</p>
+<p><strong>상업 발달:</strong> 시청 광장 주변으로 음식점, 카페, 편의점이 밀집되어 있습니다. 공무원과 방문객으로 인한 수요가 안정적입니다.</p>
+<p><strong>주거 환경:</strong> 시청 인근의 중형 아파트 단지와 주택가가 조성되어 있습니다. 공무원 거주자가 상당한 비중을 차지합니다.</p>
+<p><strong>거주민 특성:</strong> 40-60대 공무원과 가족, 그리고 자영업자들이 거주하는 안정적인 계층입니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>삼가·용인시청 생활권은 시청 중심 지역입니다:</p>
+<ul>
+<li><strong>시청 위치:</strong> 용인시청 주변 정확한 위치 안내</li>
+<li><strong>아파트:</strong> 단지명과 동호수 명확히</li>
+<li><strong>상업 건물:</strong> 시청 광장 주변 건물명</li>
+<li><strong>도로:</strong> 시청 인근 명확한 도로</li>
+<li><strong>주차:</strong> 시청 공영주차장 또는 건물별 주차</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>삼가·용인시청 생활권 내 이동은 기본 요금에 포함됩니다. 인접 생활권으로의 이동:</p>
+<ul>
+<li>역북·김량장 방향: 5,000-10,000원</li>
+<li>포곡·에버랜드 방향: 10,000-15,000원</li>
+<li>양지·원삼 방향: 15,000-20,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>삼가·용인시청 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/yeokbuk-gimnyangjang/">역북·김량장 생활권</a></li>
+<li><a href="/area/pogok-everland/">포곡·에버랜드 생활권</a></li>
+<li><a href="/cheoin-gu/">처인구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
+
 PAGES = [
     suji_office_pungdeokcheon,
     jukjeon_bojeong,
@@ -841,4 +1004,6 @@ PAGES = [
     dongbaek_eojeong,
     guseong_mabuk,
     bora_sanggal,
+    yeokbuk_gimnyangjang,
+    samga_yongin_cityhall,
 ]
