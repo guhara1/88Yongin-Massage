@@ -110,6 +110,7 @@ suji_office_pungdeokcheon = create_lifestyle_page(
 <li><a href="/area/jukjeon-bojeong/">죽전·보정 생활권</a></li>
 <li><a href="/area/dongcheon-gogi/">동천·고기동 생활권</a></li>
 <li><a href="/area/sanghyeon-gwanggyo-nearby/">상현·광교 인접 생활권</a></li>
+<li><a href="/area/seongbok-sinbong/">성복·신봉 생활권</a></li>
 <li><a href="/suji-gu/">수지구 전체 안내</a></li>
 </ul>
 </section>
@@ -117,6 +118,7 @@ suji_office_pungdeokcheon = create_lifestyle_page(
 <section>
 <h2>연락처 및 예약</h2>
 <p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+<p>수지구청·풍덕천 생활권은 고급 주거·상업 지역으로, 프리미엄 마사지 서비스를 제공합니다. 정기 예약 고객에게는 특별 할인을 제공하고 있으니, 전화 상담 시 자세히 안내드리겠습니다.</p>
 </section>
 """
 )
