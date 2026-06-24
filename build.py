@@ -483,8 +483,8 @@ def build() -> None:
 
         chars = text_length(page["body"])
         noindex = page.get("noindex", False) or chars < MIN_INDEX_CHARS
-        if not noindex:
-            sitemap_urls.append(BASE_URL.rstrip("/") + "/" + path)
+        # 모든 페이지를 sitemap에 포함 (robots meta와 무관하게)
+        sitemap_urls.append(BASE_URL.rstrip("/") + "/" + path)
         report.append((path or "/", chars, "noindex" if noindex else "index"))
 
     # sitemap.xml
