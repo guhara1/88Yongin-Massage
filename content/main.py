@@ -83,7 +83,8 @@ _breadcrumb_schema = {
 
 _breadcrumb_schema_str = json.dumps(_breadcrumb_schema, ensure_ascii=False, indent=2)
 
-_EXTRA_HEAD = f"""<script type="application/ld+json">
+_EXTRA_HEAD = f"""<meta name="naver-site-verification" content="9336bfc7e52bfcac05be5caa22addea021168913">
+<script type="application/ld+json">
 {_org_schema_str}
 </script>
 <script type="application/ld+json">

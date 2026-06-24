@@ -1,6 +1,6 @@
 # 용인시 출장마사지 사이트 공통 설정
 
-BASE_URL = "https://yongin-massage.pages.dev"
+BASE_URL = "https://88yongin-massage.pages.dev"
 
 BRAND = "88마사지"
 PHONE = "0508-202-4719"

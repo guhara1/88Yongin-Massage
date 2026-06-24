@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
 
-Sitemap: https://yongin-massage.pages.dev/sitemap.xml
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://88yongin-massage.pages.dev/sitemap.xml
+Sitemap: https://88yongin-massage.pages.dev/rss.xml

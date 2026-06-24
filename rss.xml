@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>88마사지 — 용인 출장마사지·홈타이</title>
+    <link>https://88yongin-massage.pages.dev/</link>
+    <description>용인시 수지·기흥·처인 출장마사지·홈타이 지역별 예약 안내</description>
+    <language>ko</language>
+    <item>
+      <title>88마사지 - 88yongin-massage.pages.dev</title>
+      <link>https://88yongin-massage.pages.dev/</link>
+      <guid isPermaLink="true">https://88yongin-massage.pages.dev/</guid>
+    </item>
+    <item>
+      <title>88마사지 - cheoin-gu</title>
+      <link>https://88yongin-massage.pages.dev/cheoin-gu/</link>
+      <guid isPermaLink="true">https://88yongin-massage.pages.dev/cheoin-gu/</guid>
+    </item>
+    <item>
+      <title>88마사지 - giheung-gu</title>
+      <link>https://88yongin-massage.pages.dev/giheung-gu/</link>
+      <guid isPermaLink="true">https://88yongin-massage.pages.dev/giheung-gu/</guid>
+    </item>
+    <item>
+      <title>88마사지 - suji-gu</title>
+      <link>https://88yongin-massage.pages.dev/suji-gu/</link>
+      <guid isPermaLink="true">https://88yongin-massage.pages.dev/suji-gu/</guid>
+    </item>
+  </channel>
+</rss>

@@ -385,7 +385,7 @@ def render_page(page: dict) -> str:
   <div class="header-top">
     <div class="header-inner">
       <a class="brand" href="/"><span class="brand-mark">B</span> <span class="brand-text">{BRAND}</span></a>
-      <p class="header-tagline"><span class="tag-gem">◆</span> 안산시 전지역 방문 관리 <span class="tag-gem">◆</span> 24시간 상담</p>
+      <p class="header-tagline"><span class="tag-gem">◆</span> 용인시 전지역 방문 관리 <span class="tag-gem">◆</span> 24시간 상담</p>
       <a class="header-call" href="tel:{PHONE}"><span class="call-label">예약전화</span> {PHONE_DISPLAY}</a>
       <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -498,12 +498,54 @@ def build() -> None:
             f"{urls}\n</urlset>\n"
         )
 
-    # robots.txt
+    # robots.txt — Google + Naver(Yeti) 크롤러 최적화
+    base = BASE_URL.rstrip("/")
     with open(os.path.join(PUBLIC_DIR, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(
-            "User-agent: *\nAllow: /\n\n"
-            f"Sitemap: {BASE_URL.rstrip('/')}/sitemap.xml\n"
+            "User-agent: *\n"
+            "Allow: /\n"
+            "Disallow: /assets/\n"
+            "\n"
+            "User-agent: Googlebot\n"
+            "Allow: /\n"
+            "\n"
+            "User-agent: Yeti\n"
+            "Allow: /\n"
+            "\n"
+            f"Sitemap: {base}/sitemap.xml\n"
+            f"Sitemap: {base}/rss.xml\n"
         )
+
+    # rss.xml — Naver 빠른 색인용 RSS 피드
+    rss_items = []
+    for url in sitemap_urls[:50]:  # RSS는 최대 50개
+        slug = url.rstrip("/").split("/")[-1] or "home"
+        rss_items.append(
+            f"    <item>\n"
+            f"      <title>{BRAND} - {slug}</title>\n"
+            f"      <link>{url}</link>\n"
+            f"      <guid isPermaLink=\"true\">{url}</guid>\n"
+            f"    </item>"
+        )
+    rss_body = "\n".join(rss_items)
+    with open(os.path.join(PUBLIC_DIR, "rss.xml"), "w", encoding="utf-8") as f:
+        f.write(
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<rss version="2.0">\n'
+            '  <channel>\n'
+            f'    <title>{BRAND} — 용인 출장마사지·홈타이</title>\n'
+            f'    <link>{base}/</link>\n'
+            f'    <description>용인시 수지·기흥·처인 출장마사지·홈타이 지역별 예약 안내</description>\n'
+            '    <language>ko</language>\n'
+            f'{rss_body}\n'
+            '  </channel>\n'
+            '</rss>\n'
+        )
+
+    # IndexNow 키 파일 (Bing·Naver 즉시 색인용)
+    INDEXNOW_KEY = "9336bfc7e52bfcac05be5caa22addea"
+    with open(os.path.join(PUBLIC_DIR, f"{INDEXNOW_KEY}.txt"), "w", encoding="utf-8") as f:
+        f.write(INDEXNOW_KEY)
 
     # .nojekyll (GitHub Pages)
     open(os.path.join(PUBLIC_DIR, ".nojekyll"), "w").close()
