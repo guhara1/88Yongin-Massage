@@ -586,7 +586,86 @@ singal_yeongdeok = create_lifestyle_page(
 """
 )
 
-print("Part 3 complete: pages 6-7 added")
+# 8. 동백·어정
+dongbaek_eojeong = create_lifestyle_page(
+    path="area/dongbaek-eojeong/",
+    title="동백·어정 생활권 출장마사지｜신분당선 신도시 홈타이 안내",
+    desc="동백·어정 생활권 출장마사지·홈타이 예약 전 신분당선 신도시 생활권을 확인하세요.",
+    h1="동백·어정 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("동백·어정", "")],
+    body_content="""
+<section>
+<h2>동백·어정 생활권 소개</h2>
+<p><strong>동백·어정 생활권</strong>은 용인시 기흥구의 신분당선 연선 신도시로, 동백역을 중심으로 한 최신 개발 지역입니다. 신분당선으로 서울과 직결되며, 최신식 아파트 단지와 현대적 생활 편의시설이 특징입니다. 신혼부부와 젊은 가족의 입주가 증가하고 있는 활동적인 지역입니다.</p>
+<p>이 지역은 신도시 개발의 최신 기술이 적용되어 있으며, 교통 접근성이 매우 우수합니다. 향후 용인 지역의 핵심 주거지로 성장할 것으로 예상됩니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>동백역</strong> — 신분당선 교통 거점</li>
+<li><strong>동백동</strong> — 신도시 개발 지역</li>
+<li><strong>어정동</strong> — 신규 주거 구간</li>
+<li><strong>최신식 시설</strong> — 현대적 생활환경</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>신분당선 연결:</strong> 동백역은 신분당선의 남단 종점으로, 서울 강남역까지 직결됩니다. 차량 이동 시간은 20-30분이며, 대중교통 접근성이 최고 수준입니다.</p>
+<p><strong>신도시 개발:</strong> 최신 도시계획에 따라 개발된 신도시로, 모든 시설이 최신 건축 기준을 만족합니다. 대형 쇼핑몰, 아파트, 주상복합 등이 계획적으로 배치되어 있습니다.</p>
+<p><strong>주거 환경:</strong> 신혼부부 타겟의 신규 아파트 단지와 최신식 오피스텔이 밀집되어 있습니다. 단지 내 쇼핑몰, 카페, 음식점 등 생활 편의시설이 완벽하게 갖춰져 있습니다.</p>
+<p><strong>거주민 특성:</strong> 20-40대 신혼부부와 젊은 가족이 주요 거주자이며, 교육과 문화생활을 중시하는 고학력 층입니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>동백·어정 생활권은 신도시 신분당선 지역입니다:</p>
+<ul>
+<li><strong>신축 단지:</strong> 새로운 아파트로 구조가 명확함</li>
+<li><strong>쇼핑몰 접근:</strong> 역 인근 대형 쇼핑몰 위치 안내</li>
+<li><strong>상업 건물:</strong> 최신식 오피스텔과 상업 시설 구분</li>
+<li><strong>교통 우위:</strong> 신분당선으로 최고의 교통 접근성</li>
+<li><strong>현대식 편의:</strong> 24시간 편의시설 완벽</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>동백·어정 생활권 내 이동은 기본 요금에 포함됩니다. 인접 생활권으로의 이동:</p>
+<ul>
+<li>신갈·영덕 방향: 10,000-15,000원</li>
+<li>기흥역·구갈 방향: 10,000원</li>
+<li>보라·상갈 방향: 10,000-15,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>동백·어정 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/singal-yeongdeok/">신갈·영덕 생활권</a></li>
+<li><a href="/area/bora-sanggal/">보라·상갈 생활권</a></li>
+<li><a href="/giheung-gu/">기흥구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
 
 PAGES = [
     suji_office_pungdeokcheon,
