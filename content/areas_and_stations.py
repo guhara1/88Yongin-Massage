@@ -993,17 +993,355 @@ samga_yongin_cityhall = create_lifestyle_page(
 """
 )
 
+# 13. 포곡·에버랜드
+pogok_everland = create_lifestyle_page(
+    path="area/pogok-everland/",
+    title="포곡·에버랜드 생활권 출장마사지｜자연 휴양 홈타이 안내",
+    desc="포곡·에버랜드 생활권 출장마사지·홈타이 예약 전 처인구 남부 생활권을 확인하세요.",
+    h1="포곡·에버랜드 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("포곡·에버랜드", "")],
+    body_content="""
+<section>
+<h2>포곡·에버랜드 생활권 소개</h2>
+<p><strong>포곡·에버랜드 생활권</strong>은 용인시 처인구의 남부 지역으로, 에버랜드 테마파크와 함께 관광지로도 알려진 자연 환경이 풍부한 지역입니다. 포곡읍의 조용한 농촌 환경과 에버랜드 주변의 관광 시설이 특징입니다. 관광객과 주거민 모두를 대상으로 한 서비스 수요가 있습니다.</p>
+<p>이 지역은 자연 경관이 아름답고 공기가 맑으며, 서울에서의 거리가 멀지만 휴양 목적 방문객들이 많습니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>포곡읍</strong> — 농촌 중심지</li>
+<li><strong>에버랜드</strong> — 대규모 테마파크</li>
+<li><strong>자연 경관</strong> — 산림 지역</li>
+<li><strong>관광 시설</strong> — 숙박, 음식점</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>관광지:</strong> 에버랜드는 동아시아 최대 규모의 테마파크로 연간 많은 관광객을 유입합니다. 차량 이동 시간은 30-45분이며 특히 주말 교통이 혼잡할 수 있습니다.</p>
+<p><strong>자연 환경:</strong> 포곡읍 일대는 농촌 지역으로 자연이 풍부합니다. 에버랜드 주변으로는 대규모 리조트와 펜션이 많이 조성되어 있습니다.</p>
+<p><strong>상업 시설:</strong> 에버랜드 인근으로 숙박시설, 음식당, 편의점이 집중되어 있습니다. 관광객 대상의 시설이 주를 이룹니다.</p>
+<p><strong>거주민 특성:</strong> 포곡읍의 정주민은 비교적 적으며, 관광 관련 사업자와 에버랜드 직원들이 주요 인구입니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>포곡·에버랜드 생활권은 관광지 중심입니다:</p>
+<ul>
+<li><strong>이동 시간:</strong> 도시 지역에서 거리가 멀어 충분한 시간 필요</li>
+<li><strong>숙박 시설:</strong> 에버랜드 인근 숙박시설명 정확히</li>
+<li><strong>포곡읍:</strong> 농촌 지역으로 주소 확인 필수</li>
+<li><strong>교통 혼잡:</strong> 주말/휴일 도로 혼잡 고려</li>
+<li><strong>사전 예약:</strong> 사전 확인과 예약 강력 권장</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>포곡·에버랜드 생활권은 거리가 멀어 이동비가 발생합니다:</p>
+<ul>
+<li>삼가·용인시청 방향: 15,000-20,000원</li>
+<li>양지·원삼 방향: 10,000-15,000원</li>
+<li>남사·이동 방향: 5,000-10,000원</li>
+<li>시내 중심지: 20,000-30,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>포곡·에버랜드 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/samga-yongin-cityhall/">삼가·용인시청 생활권</a></li>
+<li><a href="/area/yangji-wonsam/">양지·원삼 생활권</a></li>
+<li><a href="/area/namsa-idong/">남사·이동 생활권</a></li>
+<li><a href="/cheoin-gu/">처인구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
+
+# 14. 양지·원삼
+yangji_wonsam = create_lifestyle_page(
+    path="area/yangji-wonsam/",
+    title="양지·원삼 생활권 출장마사지｜고급 주거 홈타이 안내",
+    desc="양지·원삼 생활권 출장마사지·홈타이 예약 전 처인구 고급 주거 생활권을 확인하세요.",
+    h1="양지·원삼 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("양지·원삼", "")],
+    body_content="""
+<section>
+<h2>양지·원삼 생활권 소개</h2>
+<p><strong>양지·원삼 생활권</strong>은 용인시 처인구의 남부 고급 주거 지역으로, 양지읍과 원삼면의 고급 주택 단지가 밀집되어 있습니다. 자연 환경이 아름답고 조용한 환경 속에서 고소득층 거주자들이 거주합니다. 골프장 등 고급 시설이 인근에 위치하고 있습니다.</p>
+<p>이 지역은 서울 강남의 고급 주택 수요자들이 선호하는 지역으로, 안정적인 프리미엄 서비스 수요가 있습니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>양지읍</strong> — 고급 주택 밀집</li>
+<li><strong>원삼면</strong> — 전원 주거지</li>
+<li><strong>골프장</strong> — 고급 시설</li>
+<li><strong>자연 환경</strong> — 펜션, 휴양시설</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>고급 주거:</strong> 양지읍은 서울 강남에서 이주해온 고소득층의 고급 주택이 많습니다. 차량 이동 시간은 30-45분이며 접근성은 제한적이지만 환경은 최고 수준입니다.</p>
+<p><strong>자연 환경:</strong> 산림 지역으로 공기가 맑고 자연이 풍부합니다. 원삼면 일대는 전원주택 단지가 조성되어 있습니다.</p>
+<p><strong>고급 시설:</strong> 근처에 국제급 골프장이 위치하고 있으며, 고급 레스토랑과 편의시설이 충분합니다.</p>
+<p><strong>거주민 특성:</strong> 50-70대 은퇴자와 고소득 자영업자, 그리고 강남 직장인들이 주로 거주합니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>양지·원삼 생활권은 고급 주거 지역입니다:</p>
+<ul>
+<li><strong>위치 정보:</strong> 정확한 주소와 건물명 필수</li>
+<li><strong>도로:</strong> 시골길이 많아 사전 경로 확인</li>
+<li><strong>접근성:</strong> 거리가 있어 충분한 시간 필요</li>
+<li><strong>프리미엄:</strong> 고급 서비스 수요 높음</li>
+<li><strong>숙박 시설:</strong> 펜션이나 리조트인 경우 건물명 안내</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>양지·원삼 생활권은 거리와 접근성으로 인해 이동비 발생:</p>
+<ul>
+<li>포곡·에버랜드 방향: 10,000-15,000원</li>
+<li>남사·이동 방향: 5,000-15,000원</li>
+<li>백암·원삼 외곽 방향: 5,000-10,000원</li>
+<li>시내 중심지: 20,000-30,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>양지·원삼 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/pogok-everland/">포곡·에버랜드 생활권</a></li>
+<li><a href="/area/namsa-idong/">남사·이동 생활권</a></li>
+<li><a href="/area/baegam-wonsam/">백암·원삼 외곽 생활권</a></li>
+<li><a href="/cheoin-gu/">처인구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
+
+# 15. 남사·이동
+namsa_idong = create_lifestyle_page(
+    path="area/namsa-idong/",
+    title="남사·이동 생활권 출장마사지｜시골 휴양 홈타이 안내",
+    desc="남사·이동 생활권 출장마사지·홈타이 예약 전 처인구 남부 농촌 생활권을 확인하세요.",
+    h1="남사·이동 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("남사·이동", "")],
+    body_content="""
+<section>
+<h2>남사·이동 생활권 소개</h2>
+<p><strong>남사·이동 생활권</strong>은 용인시 처인구의 남부 농촌 지역으로, 남사읍과 이동읍의 시골 정취가 보존된 지역입니다. 자연 환경이 아름답고 조용한 환경이 특징이며, 일부 전원주택과 농촌 거주민들이 생활하고 있습니다. 휴양을 원하는 서울 주민들의 펜션 방문지로도 알려져 있습니다.</p>
+<p>이 지역은 접근성이 제한적이지만 자연을 즐기려는 사람들에게 인기가 있습니다. 시즌별 관광객 수요가 있는 지역입니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>남사읍</strong> — 농촌 중심지</li>
+<li><strong>이동읍</strong> — 전원 주거지</li>
+<li><strong>자연 경관</strong> — 농촌 풍경</li>
+<li><strong>펜션·리조트</strong> — 관광 시설</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>농촌 지역:</strong> 남사읍과 이동읍은 순수 농촌 지역으로 자연 환경이 잘 보존되어 있습니다. 차량 이동 시간은 35-50분이며 접근성이 제한적입니다.</p>
+<p><strong>자연 환경:</strong> 논과 밭이 펼쳐진 자연 경관이 아름답고, 공기가 맑습니다. 계절마다 다른 자연의 아름다움을 느낄 수 있습니다.</p>
+<p><strong>관광 시설:</strong> 펜션과 민박이 산재되어 있으며, 주말 관광객들의 방문이 많습니다.</p>
+<p><strong>거주민 특성:</strong> 토착민인 농민들과 귀농자, 그리고 펜션 운영자들이 주요 인구입니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>남사·이동 생활권은 농촌 지역입니다:</p>
+<ul>
+<li><strong>거리 고려:</strong> 시내에서 매우 멀어 충분한 시간 필요</li>
+<li><strong>주소 확인:</strong> 시골길이 많아 정확한 주소 필수</li>
+<li><strong>펜션:</strong> 펜션명과 정확한 위치 안내</li>
+<li><strong>문화 예약:</strong> 주말 관광객 대상 예약 가능</li>
+<li><strong>사전 확인:</strong> 방문 가능 여부 사전 확인 강력 권장</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>남사·이동 생활권은 원거리 지역으로 이동비가 중요합니다:</p>
+<ul>
+<li>포곡·에버랜드 방향: 5,000-10,000원</li>
+<li>양지·원삼 방향: 5,000-15,000원</li>
+<li>백암·원삼 외곽 방향: 5,000-10,000원</li>
+<li>시내 중심지: 25,000-35,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>남사·이동 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/yangji-wonsam/">양지·원삼 생활권</a></li>
+<li><a href="/area/pogok-everland/">포곡·에버랜드 생활권</a></li>
+<li><a href="/area/baegam-wonsam/">백암·원삼 외곽 생활권</a></li>
+<li><a href="/cheoin-gu/">처인구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
+
+# 16. 백암·원삼 외곽
+baegam_wonsam = create_lifestyle_page(
+    path="area/baegam-wonsam/",
+    title="백암·원삼 외곽 생활권 출장마사지｜산림 보존 홈타이 안내",
+    desc="백암·원삼 외곽 생활권 출장마사지·홈타이 예약 전 처인구 최외곽을 확인하세요.",
+    h1="백암·원삼 외곽 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("백암·원삼 외곽", "")],
+    body_content="""
+<section>
+<h2>백암·원삼 외곽 생활권 소개</h2>
+<p><strong>백암·원삼 외곽 생활권</strong>은 용인시 처인구의 최외곽 지역으로, 백암면과 원삼면의 산림 보존 지역입니다. 자연 생태계가 잘 보존되어 있으며 인구가 매우 적은 시골 지역입니다. 등산과 자연 체험을 목적으로 하는 방문객들이 있으며, 토착민 농민들이 생활하고 있습니다.</p>
+<p>이 지역은 접근성이 매우 제한적이지만, 자연 애호가들과 휴양을 원하는 사람들에게는 귀중한 공간입니다. 서비스 수요가 제한적입니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>백암면</strong> — 산림 보존 지역</li>
+<li><strong>원삼면 외곽</strong> — 최외곽 지역</li>
+<li><strong>자연 생태</strong> — 보호 구역</li>
+<li><strong>시골 주택</strong> — 산재 거주</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>산림 지역:</strong> 백암면과 원삼면 외곽은 산림이 대부분을 차지하는 자연 보존 지역입니다. 차량 이동 시간은 40-60분이며 도로 상태가 좋지 않을 수 있습니다.</p>
+<p><strong>자연 환경:</strong> 산림 생태계가 잘 보존되어 있으며, 공기와 물이 맑습니다. 등산로가 많아 등산객들의 방문이 있습니다.</p>
+<p><strong>주거 현황:</strong> 인구가 매우 적으며, 대부분 토착민 농민들입니다. 일부 자연 체험 시설과 펜션이 산재되어 있습니다.</p>
+<p><strong>거주민 특성:</strong> 고령의 토착민 농민들과 소수의 귀촌자들이 거주합니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>백암·원삼 외곽은 극한 시골 지역입니다:</p>
+<ul>
+<li><strong>접근성 매우 제한:</strong> 도시에서 가장 먼 지역</li>
+<li><strong>도로 확인:</strong> 산림 도로로 사전 확인 필수</li>
+<li><strong>주소 확인:</strong> 시골길이 많아 정확한 위치 필요</li>
+<li><strong>휴대폰 신호:</strong> 신호 수신 안 될 수 있음</li>
+<li><strong>예약 매우 제한적:</strong> 사전 예약 및 확인 필수</li>
+<li><strong>계절성:</strong> 겨울철 방문이 어려울 수 있음</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>백암·원삼 외곽은 용인 최외곽으로 높은 이동비:</p>
+<ul>
+<li>남사·이동 방향: 5,000-10,000원</li>
+<li>양지·원삼 방향: 5,000-10,000원</li>
+<li>시내 중심지: 30,000-40,000원</li>
+<li>특수 지역: 별도 상담 필요</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>백암·원삼 외곽 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격과 방문 가능성은 <a href="tel:0508-202-4719">0508-202-4719</a>로 반드시 확인하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/namsa-idong/">남사·이동 생활권</a></li>
+<li><a href="/area/yangji-wonsam/">양지·원삼 생활권</a></li>
+<li><a href="/cheoin-gu/">처인구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+<p><strong>주의:</strong> 이 지역은 접근성이 매우 제한적이므로 사전 예약 및 상담이 필수입니다.</p>
+</section>
+"""
+)
+
+# ===== 최종 PAGES 리스트 (16개) =====
 PAGES = [
-    suji_office_pungdeokcheon,
-    jukjeon_bojeong,
-    dongcheon_gogi,
-    seongbok_sinbong,
-    sanghyeon_gwanggyo,
-    giheung_gugal,
-    singal_yeongdeok,
-    dongbaek_eojeong,
-    guseong_mabuk,
-    bora_sanggal,
-    yeokbuk_gimnyangjang,
-    samga_yongin_cityhall,
+    suji_office_pungdeokcheon,    # 1. 수지구청·풍덕천
+    jukjeon_bojeong,               # 2. 죽전·보정
+    dongcheon_gogi,                # 3. 동천·고기동
+    seongbok_sinbong,              # 4. 성복·신봉
+    sanghyeon_gwanggyo,            # 5. 상현·광교 인접
+    giheung_gugal,                 # 6. 기흥역·구갈
+    singal_yeongdeok,              # 7. 신갈·영덕
+    dongbaek_eojeong,              # 8. 동백·어정
+    guseong_mabuk,                 # 9. 구성·마북
+    bora_sanggal,                  # 10. 보라·상갈
+    yeokbuk_gimnyangjang,          # 11. 역북·김량장
+    samga_yongin_cityhall,         # 12. 삼가·용인시청
+    pogok_everland,                # 13. 포곡·에버랜드
+    yangji_wonsam,                 # 14. 양지·원삼
+    namsa_idong,                   # 15. 남사·이동
+    baegam_wonsam,                 # 16. 백암·원삼 외곽
 ]
