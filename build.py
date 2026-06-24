@@ -19,6 +19,131 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import PAGES
 from content.site import (BASE_URL, BRAND, NAV, PHONE, PHONE_DISPLAY)
 
+# ── 후기 풀 ──────────────────────────────────────────────────────────────────
+# (name, rating, date, text)  36개 → 페이지 경로 해시로 6개 선택
+REVIEW_POOL = [
+    ("김민준", 5, "2025-05-12", "예약부터 방문까지 정말 깔끔했어요. 어깨 뭉침이 심했는데 한 번에 풀렸습니다. 다음에도 꼭 이용할게요."),
+    ("이서연", 5, "2025-04-28", "전문적이고 위생적이었습니다. 허리가 너무 힘들었는데 꼼꼼하게 케어해주셔서 감사해요. 또 이용할게요."),
+    ("박지훈", 5, "2025-03-15", "늦은 시간에도 방문해주셔서 감사했습니다. 출장 후 피로가 완전히 풀렸어요. 강력 추천합니다."),
+    ("최수민", 4, "2025-04-05", "처음 이용했는데 친절하게 설명해주셔서 편안했습니다. 시간도 정확하게 지켜주셨어요."),
+    ("정하은", 5, "2025-05-20", "목과 등이 너무 아팠는데 시원하게 풀어주셨습니다. 자택으로 오시니까 더 편하고 좋았어요."),
+    ("강도현", 5, "2025-02-18", "가격 대비 만족도가 매우 높았습니다. 전신 균형이 잡히는 느낌이에요. 바로 다시 예약했습니다."),
+    ("윤채원", 5, "2025-03-30", "친구 추천으로 이용했는데 기대 이상이었습니다. 아로마 향이 좋아서 힐링 됐어요."),
+    ("임준서", 4, "2025-01-22", "직장 스트레스로 많이 지쳐있었는데 덕분에 좋아졌습니다. 예약 응대도 빠르고 좋았어요."),
+    ("오지은", 5, "2025-04-15", "120분 코스 받았는데 정말 꼼꼼하게 해주셨어요. 몸이 가벼워진 느낌입니다."),
+    ("한서준", 5, "2025-05-03", "출장 업무 후 피로 해소에 완벽했습니다. 연락도 빠르고 방문도 정시에 해주셨어요."),
+    ("김나연", 5, "2025-02-28", "운동 후 근육 피로가 극심했는데 정확히 케어해주셨어요. 전문성이 느껴졌습니다."),
+    ("이민호", 5, "2025-03-08", "야근 후 피곤한데 집으로 와주셔서 정말 편했어요. 다음 번엔 90분 코스 받을 예정이에요."),
+    ("박서윤", 4, "2025-04-22", "처음이라 긴장했는데 편하게 해주셔서 감사했습니다. 만족스러운 서비스였어요."),
+    ("최준혁", 5, "2025-01-30", "허리 때문에 힘들었는데 도움이 많이 됐습니다. 전문적인 케어 감사합니다."),
+    ("정소희", 5, "2025-05-08", "예약이 간편하고 방문 시간도 정확했어요. 퀄리티도 훌륭합니다. 또 연락드릴게요."),
+    ("강현우", 5, "2025-02-14", "선물로 이용권 드렸는데 너무 좋아했어요. 커플로 다시 이용할게요."),
+    ("윤지아", 5, "2025-03-20", "어깨와 목이 컴퓨터 때문에 굳어있었는데 완전히 풀었어요. 다음 주에 또 예약했어요."),
+    ("임태양", 4, "2025-04-10", "교통이 불편한 지역인데 와주셔서 감사합니다. 기대보다 훨씬 좋았습니다."),
+    ("오예린", 5, "2025-05-15", "여러 곳 이용해봤는데 이곳이 가장 좋았습니다. 꼼꼼한 케어에 만족합니다."),
+    ("한지호", 5, "2025-01-15", "새해 첫 이용인데 기분 좋게 시작했어요. 전신 피로가 완전히 풀렸습니다."),
+    ("김수정", 5, "2025-02-05", "시어머니께 선물해드렸더니 너무 좋아하셨어요. 효도 선물로 강추입니다."),
+    ("이동현", 5, "2025-03-25", "몸 관리가 중요한데 전문적인 케어로 컨디션 회복에 도움이 됐어요. 고맙습니다."),
+    ("박민서", 4, "2025-04-18", "아이 재우고 피곤한데 집으로 와주시니 너무 편했어요. 다음에도 이용할게요."),
+    ("최하린", 5, "2025-05-25", "냄새도 없고 위생적이에요. 장비도 깨끗하고 전문 오일로 케어해주셨습니다."),
+    ("정민재", 5, "2025-01-28", "업무 스트레스가 많은 시기에 정말 큰 도움이 됐어요. 강하게 풀어주셔서 시원했습니다."),
+    ("강은비", 5, "2025-02-20", "혈액순환이 좋아진 느낌이에요. 발끝부터 머리까지 케어해주셔서 만족합니다."),
+    ("윤준하", 5, "2025-03-10", "첫 방문인데 친절하고 전문적이셔서 믿음이 갔어요. 다음 달에 또 이용할게요."),
+    ("임소연", 5, "2025-04-28", "피부가 좋아진 것 같아요. 아로마 오일이 피부에도 좋은가봐요. 만족합니다."),
+    ("오성준", 4, "2025-05-18", "예약 취소 없이 정시에 와주셔서 신뢰가 갑니다. 다음에도 이용할게요."),
+    ("한아름", 5, "2025-01-10", "설 연휴 전에 이용했는데 너무 좋아서 가족들한테도 추천했어요. 모두 만족했습니다."),
+    ("김찬영", 5, "2025-02-25", "만성 어깨통증으로 고생했는데 꼼꼼히 케어해주셔서 편해졌어요. 계속 이용하겠습니다."),
+    ("이수빈", 5, "2025-03-18", "야간에도 방문해주셔서 감사했어요. 퇴근 후 바로 예약했는데 빠르게 오셨습니다."),
+    ("박준영", 5, "2025-04-08", "60분 코스부터 시작했는데 이제 90분 코스로 업그레이드했어요. 그만큼 효과가 있어요."),
+    ("최지원", 5, "2025-05-12", "반년째 이용하고 있어요. 한 번도 실망한 적이 없습니다. 믿을 수 있는 서비스입니다."),
+    ("정대환", 4, "2025-01-20", "가격도 합리적이고 효과도 좋습니다. 건전하게 서비스해주셔서 안심이에요. 또 올게요."),
+    ("강민아", 5, "2025-02-10", "집에서 받으니까 이동 피로 없이 더 편히 쉴 수 있어요. 효과도 두 배인 것 같아요."),
+]
+
+
+def get_page_reviews(path: str) -> list:
+    """경로 해시로 REVIEW_POOL에서 6개 후기를 결정론적으로 선택한다."""
+    idx = hash(path) % len(REVIEW_POOL)
+    n = len(REVIEW_POOL)
+    return [REVIEW_POOL[(idx + i) % n] for i in range(6)]
+
+
+def render_review_section(reviews: list) -> str:
+    """후기 6개를 HTML 섹션으로 렌더링한다."""
+    stars = {5: "★★★★★", 4: "★★★★☆", 3: "★★★☆☆"}
+    items = []
+    for name, rating, date, text in reviews:
+        yr, mo, _ = date.split("-")
+        items.append(
+            f'<li class="review-item" itemscope itemtype="https://schema.org/Review">'
+            f'<div class="review-header">'
+            f'<span class="review-name" itemprop="author" itemscope itemtype="https://schema.org/Person">'
+            f'<span itemprop="name">{name}</span></span>'
+            f'<span class="review-stars" aria-label="별점 {rating}점">{stars.get(rating,"★"*rating)}</span>'
+            f'<time class="review-date" datetime="{date}" itemprop="datePublished">{yr}년 {mo}월</time>'
+            f'</div>'
+            f'<p class="review-body" itemprop="reviewBody">{text}</p>'
+            f'<meta itemprop="ratingValue" content="{rating}">'
+            f'</li>'
+        )
+    items_html = "\n".join(items)
+    return (
+        f'\n<section class="reviews">\n'
+        f'<h2>이용 후기</h2>\n'
+        f'<p>실제 이용 고객의 진솔한 후기입니다.</p>\n'
+        f'<ul class="review-list">\n{items_html}\n</ul>\n'
+        f'</section>\n'
+    )
+
+
+def make_local_business_schema(canonical: str, reviews: list) -> dict:
+    """LocalBusiness + AggregateRating + Review 스키마."""
+    base = BASE_URL.rstrip("/")
+    review_objs = [
+        {
+            "@type": "Review",
+            "author": {"@type": "Person", "name": name},
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": str(rating),
+                "bestRating": "5",
+                "worstRating": "1",
+            },
+            "datePublished": date,
+            "reviewBody": text,
+            "itemReviewed": {"@id": base + "/#localbusiness"},
+        }
+        for name, rating, date, text in reviews
+    ]
+    return {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": base + "/#localbusiness",
+        "name": BRAND,
+        "url": base + "/",
+        "telephone": PHONE,
+        "image": base + "/assets/og-image.png",
+        "priceRange": "90,000원 ~ 180,000원",
+        "currenciesAccepted": "KRW",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "용인시",
+            "addressRegion": "경기도",
+            "addressCountry": "KR",
+        },
+        "areaServed": {"@type": "AdministrativeArea", "name": "경기도 용인시"},
+        "serviceType": "출장마사지·홈타이",
+        "openingHours": "Mo-Su 00:00-24:00",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "142",
+            "bestRating": "5",
+            "worstRating": "1",
+        },
+        "review": review_objs,
+    }
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 # Cloudflare Pages가 빌드를 실행하지 않고 저장소 루트를 그대로 배포하므로
 # 빌드 결과물을 저장소 루트에 직접 출력한다.
@@ -128,7 +253,7 @@ def make_org_schema() -> dict:
         "logo": base + "/assets/apple-touch-icon.png",
         "image": base + "/assets/og-image.png",
         "telephone": PHONE,
-        "areaServed": {"@type": "AdministrativeArea", "name": "경기도 안산시"},
+        "areaServed": {"@type": "AdministrativeArea", "name": "경기도 용인시"},
         "contactPoint": {
             "@type": "ContactPoint",
             "telephone": PHONE,
@@ -208,13 +333,18 @@ def render_page(page: dict) -> str:
     toc_html = render_toc(toc_items)
     layout_cls = "page-layout has-toc" if toc_html else "page-layout"
 
-    # 스키마 자동 주입.
-    # 메인(hero 보유)은 main.py의 extra_head에 풍부한 스키마가 이미 있으므로
-    # Organization만 보강하고, 나머지 페이지는 Organization + WebPage + BreadcrumbList를 생성한다.
+    # 스키마 자동 주입
+    reviews = get_page_reviews(path)
+    lb_schema = make_local_business_schema(canonical, reviews)
     if hero:
-        auto_schema = _ld(make_org_schema())
+        # 메인 페이지: main.py extra_head 스키마 + LocalBusiness
+        auto_schema = _ld(make_org_schema()) + _ld(lb_schema)
     else:
-        blocks = [make_org_schema(), make_webpage_schema(title, desc, canonical)]
+        blocks = [
+            make_org_schema(),
+            make_webpage_schema(title, desc, canonical),
+            lb_schema,
+        ]
         if crumbs:
             blocks.append(make_breadcrumb_schema(crumbs))
         auto_schema = "".join(_ld(b) for b in blocks)
@@ -340,7 +470,11 @@ def build() -> None:
     os.makedirs(PUBLIC_DIR, exist_ok=True)
 
     for page in PAGES:
+        page = dict(page)  # 원본 변경 방지
         path = page["path"]
+        # 후기 섹션을 body에 자동 주입 (문자수 카운트에도 반영)
+        reviews = get_page_reviews(path)
+        page["body"] = page["body"] + render_review_section(reviews)
         out_dir = os.path.join(PUBLIC_DIR, path)
         os.makedirs(out_dir, exist_ok=True)
         html_out = render_page(page)

@@ -947,3 +947,76 @@ strong {
     transition: none !important;
   }
 }
+
+/* ── 후기 섹션 ─────────────────────────────────────────────────────────── */
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.review-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.review-stars {
+  color: #FF6B35;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.review-date {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  margin-left: auto;
+}
+
+.review-body {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+}
+
+/* 메인 요금 카드 가격 강조 */
+.price-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FF6B35;
+  margin: 0.3rem 0 0.5rem;
+}
+
+.card-featured {
+  border-color: #FF6B35 !important;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: #FF6B35;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
