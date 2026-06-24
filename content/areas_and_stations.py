@@ -667,6 +667,169 @@ dongbaek_eojeong = create_lifestyle_page(
 """
 )
 
+# 9. 구성·마북
+guseong_mabuk = create_lifestyle_page(
+    path="area/guseong-mabuk/",
+    title="구성·마북 생활권 출장마사지｜용인경전철 홈타이 안내",
+    desc="구성·마북 생활권 출장마사지·홈타이 예약 전 기흥구 산업지역을 확인하세요.",
+    h1="구성·마북 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("구성·마북", "")],
+    body_content="""
+<section>
+<h2>구성·마북 생활권 소개</h2>
+<p><strong>구성·마북 생활권</strong>은 용인시 기흥구의 산업 및 주거 혼합 지역으로, 용인경전철 구성역을 중심으로 발전하고 있습니다. 반도체 산업단지와 인접하여 직장인 수요가 높으며, 동시에 안정적인 주거 지역으로도 기능합니다. 차량으로 접근 가능한 대형 아파트 단지들이 있습니다.</p>
+<p>이 지역은 산업 지역과 주거 지역이 분리되어 있어, 일과 생활의 균형을 맞추기에 좋은 환경입니다. 야간 마사지 수요가 안정적입니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>구성역</strong> — 용인경전철 교통 거점</li>
+<li><strong>구성동</strong> — 상업 중심지</li>
+<li><strong>마북동</strong> — 산업단지 인근</li>
+<li><strong>주거 단지</strong> — 아파트 밀집</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>교통 거점:</strong> 구성역은 용인경전철의 중요 역으로, 차량 이동 시간은 15-25분입니다. 버스 노선도 발달되어 있어 대중교통 접근성이 우수합니다.</p>
+<p><strong>산업 지역:</strong> 삼성, SK 등 대규모 반도체 산업단지 인근으로 직장인이 많이 거주합니다. 교대 근무자들의 야간 마사지 수요가 높습니다.</p>
+<p><strong>주거 환경:</strong> 대형 아파트 단지들이 조성되어 있으며, 산업단지와는 일정 거리를 두고 있어 생활 환경이 비교적 쾌적합니다. 단지별 상업 시설이 갖춰져 있습니다.</p>
+<p><strong>거주민 특성:</strong> 30-40대 산업 직장인과 가족 단위 거주자가 주류이며, 중상위 소득층입니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>구성·마북 생활권은 산업지역 인접 주거 지역입니다:</p>
+<ul>
+<li><strong>산업단지 구분:</strong> 마북동 산업단지와 구성동 주거지 구분</li>
+<li><strong>아파트 단지:</strong> 대형 단지명과 동호수 정확히</li>
+<li><strong>역세권:</strong> 구성역 출구 번호 확인</li>
+<li><strong>야근 직장인:</strong> 야간(20:00-23:00) 수요 높음</li>
+<li><strong>교대 근무:</strong> 새벽 시간 마사지 요청 가능</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>구성·마북 생활권 내 이동은 기본 요금에 포함됩니다. 인접 생활권으로의 이동:</p>
+<ul>
+<li>기흥역·구갈 방향: 5,000-10,000원</li>
+<li>신갈·영덕 방향: 5,000-10,000원</li>
+<li>보라·상갈 방향: 5,000-10,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>구성·마북 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/giheung-gugal/">기흥역·구갈 생활권</a></li>
+<li><a href="/area/singal-yeongdeok/">신갈·영덕 생활권</a></li>
+<li><a href="/area/bora-sanggal/">보라·상갈 생활권</a></li>
+<li><a href="/giheung-gu/">기흥구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
+
+# 10. 보라·상갈
+bora_sanggal = create_lifestyle_page(
+    path="area/bora-sanggal/",
+    title="보라·상갈 생활권 출장마사지｜신도시 복합 홈타이 안내",
+    desc="보라·상갈 생활권 출장마사지·홈타이 예약 전 기흥구 신도시 생활권을 확인하세요.",
+    h1="보라·상갈 생활권",
+    breadcrumb=[("용인", "/"), ("생활권 안내", "/"), ("보라·상갈", "")],
+    body_content="""
+<section>
+<h2>보라·상갈 생활권 소개</h2>
+<p><strong>보라·상갈 생활권</strong>은 용인시 기흥구의 신도시 복합 지역으로, 신도시 개발로 인한 현대적 주거 환경이 특징입니다. 보라동의 대형 신도시와 상갈동의 상업 지역이 조화를 이루고 있으며, 젊은 가족과 신혼부부의 입주가 많은 활동적인 지역입니다. 교통 접근성이 우수하고 생활 편의가 충분합니다.</p>
+<p>이 지역은 신도시의 계획된 구조로 인해 도시 기반 시설이 체계적으로 정비되어 있습니다. 안정적인 마사지 서비스 수요가 있는 지역입니다.</p>
+</section>
+
+<section>
+<h2>생활권 구성</h2>
+<ul>
+<li><strong>보라동</strong> — 신도시 주거 중심</li>
+<li><strong>상갈동</strong> — 상업 시설 집중</li>
+<li><strong>신도시 아파트</strong> — 대규모 단지</li>
+<li><strong>상업 복합시설</strong> — 쇼핑, 음식</li>
+</ul>
+</section>
+
+<section>
+<h2>생활권의 특성</h2>
+<p><strong>신도시 개발:</strong> 계획된 신도시 구조로 도로, 상하수도, 전기 등 기반 시설이 최신 기준으로 조성되어 있습니다. 차량 이동 시간은 15-25분입니다.</p>
+<p><strong>주거 환경:</strong> 보라동의 대규모 신도시 아파트 단지들이 조성되어 있으며, 모든 아파트가 최신식입니다. 단지 내 공원, 어린이 놀이터, 운동 시설이 충실합니다.</p>
+<p><strong>상업 시설:</strong> 상갈동 중심으로 대형 쇼핑몰, 음식점, 카페가 밀집되어 있으며, 24시간 편의점과 음식점이 충분합니다.</p>
+<p><strong>거주민 특성:</strong> 30-45세 가족 단위 거주자가 주류이며, 자녀 교육을 중시하는 중상위 소득층입니다.</p>
+</section>
+
+<section>
+<h2>예약 시 중요 안내</h2>
+<p>보라·상갈 생활권은 신도시 복합 지역입니다:</p>
+<ul>
+<li><strong>단지명 구분:</strong> 보라동 아파트 단지명 정확히</li>
+<li><strong>동호수 안내:</strong> 신도시 구조에 따른 동호수 확인</li>
+<li><strong>상업 건물:</strong> 상갈동 상업 시설 위치 명확히</li>
+<li><strong>주차 편의:</strong> 단지 주차권 또는 상업시설 주차</li>
+<li><strong>명확한 도로:</strong> 신도시의 체계적 도로 구조</li>
+</ul>
+</section>
+
+<section>
+<h2>이동비 및 추가 요금</h2>
+<p>보라·상갈 생활권 내 이동은 기본 요금에 포함됩니다. 인접 생활권으로의 이동:</p>
+<ul>
+<li>구성·마북 방향: 5,000-10,000원</li>
+<li>신갈·영덕 방향: 10,000원</li>
+<li>동백·어정 방향: 10,000-15,000원</li>
+</ul>
+</section>
+
+<section class="pricing">
+<h3>기본 요금</h3>
+<p><strong>보라·상갈 생활권 출장마사지 기본 요금</strong></p>
+<ul>
+<li>1시간: 70,000원~</li>
+<li>2시간: 140,000원~</li>
+<li>3시간: 210,000원~</li>
+</ul>
+<p>정확한 가격은 <a href="tel:0508-202-4719">0508-202-4719</a>로 문의하세요.</p>
+</section>
+
+<section>
+<h2>인접 생활권 및 관련 페이지</h2>
+<ul>
+<li><a href="/area/guseong-mabuk/">구성·마북 생활권</a></li>
+<li><a href="/area/dongbaek-eojeong/">동백·어정 생활권</a></li>
+<li><a href="/giheung-gu/">기흥구 전체 안내</a></li>
+</ul>
+</section>
+
+<section>
+<h2>연락처 및 예약</h2>
+<p><strong>88마사지</strong> | 전화: <a href="tel:0508-202-4719">0508-202-4719</a> (24시간 접수) | 웹사이트: https://yongin-massage.pages.dev</p>
+</section>
+"""
+)
+
 PAGES = [
     suji_office_pungdeokcheon,
     jukjeon_bojeong,
@@ -675,4 +838,7 @@ PAGES = [
     sanghyeon_gwanggyo,
     giheung_gugal,
     singal_yeongdeok,
+    dongbaek_eojeong,
+    guseong_mabuk,
+    bora_sanggal,
 ]
