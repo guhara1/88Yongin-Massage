@@ -133,7 +133,7 @@ def make_local_business_schema(canonical: str, reviews: list) -> dict:
         "name": BRAND,
         "url": base + "/",
         "telephone": PHONE,
-        "image": base + "/assets/og-image.png",
+        "image": base + "/assets/og-image.jpg",
         "priceRange": "90,000원 ~ 180,000원",
         "currenciesAccepted": "KRW",
         "address": {
@@ -265,7 +265,7 @@ def make_org_schema() -> dict:
         "name": BRAND,
         "url": base + "/",
         "logo": base + "/assets/apple-touch-icon.png",
-        "image": base + "/assets/og-image.png",
+        "image": base + "/assets/og-image.jpg",
         "telephone": PHONE,
         "areaServed": {"@type": "AdministrativeArea", "name": "경기도 용인시"},
         "contactPoint": {
@@ -524,11 +524,11 @@ def render_page(page: dict) -> str:
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:site_name" content="{BRAND}">
-<meta property="og:image" content="{BASE_URL.rstrip('/')}/assets/og-image.png">
+<meta property="og:image" content="{BASE_URL.rstrip('/')}/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{BASE_URL.rstrip('/')}/assets/og-image.png">
+<meta name="twitter:image" content="{BASE_URL.rstrip('/')}/assets/og-image.jpg">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
 <link rel="icon" href="/favicon.ico?v=2" sizes="48x48">
