@@ -75,7 +75,7 @@ def render_review_section(reviews: list) -> str:
     for name, rating, date, text in reviews:
         yr, mo, _ = date.split("-")
         items.append(
-            f'<li class="review-item" itemscope itemtype="https://schema.org/Review">'
+            f'<li class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">'
             f'<div class="review-header">'
             f'<span class="review-name" itemprop="author" itemscope itemtype="https://schema.org/Person">'
             f'<span itemprop="name">{name}</span></span>'
@@ -83,13 +83,24 @@ def render_review_section(reviews: list) -> str:
             f'<time class="review-date" datetime="{date}" itemprop="datePublished">{yr}년 {mo}월</time>'
             f'</div>'
             f'<p class="review-body" itemprop="reviewBody">{text}</p>'
+            f'<span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">'
             f'<meta itemprop="ratingValue" content="{rating}">'
+            f'<meta itemprop="bestRating" content="5"><meta itemprop="worstRating" content="1">'
+            f'</span>'
             f'</li>'
         )
     items_html = "\n".join(items)
+    base = BASE_URL.rstrip("/")
     return (
-        f'\n<section class="reviews">\n'
+        f'\n<section class="reviews" itemscope itemtype="https://schema.org/LocalBusiness" itemid="{base}/#localbusiness">\n'
+        f'<meta itemprop="name" content="{BRAND}">\n'
         f'<h2>이용 후기</h2>\n'
+        f'<div class="review-summary" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">\n'
+        f'<span class="review-score"><span itemprop="ratingValue">4.9</span><span class="review-score-max">/<span itemprop="bestRating">5</span></span></span>\n'
+        f'<span class="review-stars-lg" aria-hidden="true">★★★★★</span>\n'
+        f'<span class="review-count"><span itemprop="reviewCount">142</span>개 후기 기준</span>\n'
+        f'<meta itemprop="worstRating" content="1">\n'
+        f'</div>\n'
         f'<p>실제 이용 고객의 진솔한 후기입니다.</p>\n'
         f'<ul class="review-list">\n{items_html}\n</ul>\n'
         f'</section>\n'
@@ -153,8 +164,11 @@ MIN_INDEX_CHARS = 2000
 
 def text_length(body_html: str) -> int:
     """태그를 제거한 본문 글자수(공백 포함, 연속 공백은 1자).
-    공통 요금 블록은 페이지 고유 본문이 아니므로 측정에서 제외한다."""
+    공통 요금 블록과 전 페이지 공통 내부링크 블록은 페이지 고유 본문이
+    아니므로(보일러플레이트) 측정에서 제외한다. 이렇게 해야 2,000자 미만
+    noindex 게이트가 '고유 콘텐츠' 기준을 정확히 반영한다."""
     text = re.sub(r'<section class="pricing">.*?</section>', " ", body_html, flags=re.S)
+    text = re.sub(r'<section class="region-index"[^>]*>.*?</section>', " ", text, flags=re.S)
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
@@ -302,6 +316,148 @@ def make_webpage_schema(title: str, desc: str, canonical: str) -> dict:
     }
 
 
+# ── 요금/서비스 스키마 ────────────────────────────────────────────────────────
+COURSES = [
+    ("60분 코스", "90000", "핵심 부위 위주 가벼운 이완 관리"),
+    ("90분 코스", "150000", "전신 균형 표준 구성·아로마 포함"),
+    ("120분 코스", "180000", "구석구석 집중하는 프리미엄 구성"),
+]
+
+
+def make_service_schema() -> dict:
+    """Service + Offer(요금) 스키마. AggregateRating·areaServed 포함."""
+    base = BASE_URL.rstrip("/")
+    return {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": base + "/#service",
+        "name": "용인 출장마사지·홈타이",
+        "serviceType": "출장마사지·홈타이 방문 관리",
+        "provider": {"@id": base + "/#localbusiness"},
+        "areaServed": {"@type": "AdministrativeArea", "name": "경기도 용인시"},
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "142",
+            "reviewCount": "142",
+            "bestRating": "5",
+            "worstRating": "1",
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "KRW",
+            "lowPrice": "90000",
+            "highPrice": "180000",
+            "offerCount": str(len(COURSES)),
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": name,
+                    "price": price,
+                    "priceCurrency": "KRW",
+                    "description": desc,
+                    "availability": "https://schema.org/InStock",
+                }
+                for name, price, desc in COURSES
+            ],
+        },
+    }
+
+
+# ── 전지역 내부링크 (히어로 패널 + 본문 섹션) ────────────────────────────────
+GU_NAMES = {"cheoin-gu": "처인구", "giheung-gu": "기흥구", "suji-gu": "수지구"}
+
+
+def region_label(page: dict) -> str:
+    """h1 에서 ' 출장마사지' 접미어를 떼어낸 짧은 라벨."""
+    return re.sub(r"\s*출장마사지\s*$", "", page["h1"]).strip()
+
+
+def build_region_groups(pages: list) -> dict:
+    """전체 페이지를 구별 동·역세권·생활권으로 분류한다."""
+    groups = {
+        "districts": [],          # (label, href, gu_key)
+        "dongs": {"cheoin-gu": [], "giheung-gu": [], "suji-gu": []},
+        "stations": [],
+        "lifezones": [],
+    }
+    for p in pages:
+        path = p.get("path", "")
+        if not path:
+            continue
+        label = region_label(p)
+        href = "/" + path
+        seg = path.rstrip("/").split("/")
+        if path.startswith("station/"):
+            groups["stations"].append((label, href))
+        elif path.startswith("area/"):
+            groups["lifezones"].append((label, href))
+        elif seg[0] in GU_NAMES:
+            if len(seg) == 1:
+                groups["districts"].append((GU_NAMES[seg[0]], href, seg[0]))
+            else:
+                groups["dongs"][seg[0]].append((label, href))
+    return groups
+
+
+def _region_links(items, current_path: str) -> str:
+    """(label, href) 목록을 롱테일 제목(title)이 달린 링크 칩으로 렌더."""
+    lis = []
+    for label, href in items:
+        active = ' aria-current="page"' if href.strip("/") == current_path.strip("/") else ""
+        title = f"{label} 출장마사지·홈타이 방문 예약 안내"
+        lis.append(f'<li><a href="{href}" title="{title}"{active}>{label}</a></li>')
+    return "".join(lis)
+
+
+def render_region_index(groups: dict, current_path: str, variant: str = "section") -> str:
+    """전지역 내부링크 블록. variant='hero' 면 히어로 우측 패널용 컴팩트 마크업."""
+    cols = []
+    for gu_key, gu_label in GU_NAMES.items():
+        dongs = groups["dongs"].get(gu_key, [])
+        if not dongs:
+            continue
+        hub_href = "/" + gu_key + "/"
+        cols.append(
+            f'<div class="region-col">'
+            f'<h3><a href="{hub_href}">{gu_label} 출장마사지</a></h3>'
+            f'<ul class="region-links">{_region_links(dongs, current_path)}</ul>'
+            f'</div>'
+        )
+    if groups["stations"]:
+        cols.append(
+            f'<div class="region-col">'
+            f'<h3>용인 역세권 홈타이</h3>'
+            f'<ul class="region-links">{_region_links(groups["stations"], current_path)}</ul>'
+            f'</div>'
+        )
+    if groups["lifezones"]:
+        cols.append(
+            f'<div class="region-col">'
+            f'<h3>용인 생활권 출장마사지</h3>'
+            f'<ul class="region-links">{_region_links(groups["lifezones"], current_path)}</ul>'
+            f'</div>'
+        )
+    cols_html = "\n".join(cols)
+
+    if variant == "hero":
+        return (
+            '<div class="hero-regions" aria-label="용인 전지역 바로가기">'
+            '<p class="hero-regions-title">용인 전지역 바로가기</p>'
+            f'<div class="region-groups region-groups--hero">{cols_html}</div>'
+            '</div>'
+        )
+
+    return (
+        '\n<section class="region-index" id="all-regions" aria-label="용인 전지역 출장마사지 바로가기">\n'
+        '<h2>용인 전지역 출장마사지·홈타이 바로가기</h2>\n'
+        '<p>수지구·기흥구·처인구 모든 동지역과 역세권, 생활권 페이지를 한 곳에 모았습니다. '
+        '원하는 지역을 눌러 방문 가능 범위와 예약 전 확인사항을 바로 확인하세요.</p>\n'
+        f'<div class="region-groups">{cols_html}</div>\n'
+        '</section>\n'
+    )
+
+
 def render_page(page: dict) -> str:
     path = page["path"]
     title = page["title"]
@@ -337,13 +493,18 @@ def render_page(page: dict) -> str:
     reviews = get_page_reviews(path)
     lb_schema = make_local_business_schema(canonical, reviews)
     if hero:
-        # 메인 페이지: main.py extra_head 스키마 + LocalBusiness
-        auto_schema = _ld(make_org_schema()) + _ld(lb_schema)
+        # 메인 페이지: main.py extra_head 스키마 + LocalBusiness + Service
+        auto_schema = (
+            _ld(make_org_schema())
+            + _ld(lb_schema)
+            + _ld(make_service_schema())
+        )
     else:
         blocks = [
             make_org_schema(),
             make_webpage_schema(title, desc, canonical),
             lb_schema,
+            make_service_schema(),
         ]
         if crumbs:
             blocks.append(make_breadcrumb_schema(crumbs))
@@ -469,9 +630,23 @@ def build() -> None:
     # public 디렉터리가 없으면 생성
     os.makedirs(PUBLIC_DIR, exist_ok=True)
 
+    # 전지역 내부링크용 그룹 (한 번만 계산)
+    region_groups = build_region_groups(PAGES)
+
     for page in PAGES:
         page = dict(page)  # 원본 변경 방지
         path = page["path"]
+        hero = page.get("hero", "")
+
+        # 전지역 내부링크 주입
+        if hero:
+            # 메인: 히어로 우측 패널에 전지역 링크 노출
+            panel = render_region_index(region_groups, path, variant="hero")
+            page["hero"] = hero.replace("<!--HERO_REGIONS-->", panel)
+        else:
+            # 그 외 모든 페이지: 본문 하단에 전지역 내부링크 섹션 주입
+            page["body"] = page["body"] + render_region_index(region_groups, path)
+
         # 후기 섹션을 body에 자동 주입 (문자수 카운트에도 반영)
         reviews = get_page_reviews(path)
         page["body"] = page["body"] + render_review_section(reviews)

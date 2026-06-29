@@ -95,34 +95,31 @@ _EXTRA_HEAD = f"""<meta name="naver-site-verification" content="9336bfc7e52bfcac
 </script>"""
 
 _HERO = """<div class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">용인시 전지역 방문 관리</div>
-    <h1 class="hero-title">용인 출장마사지<br><span class="hero-accent">용인 홈타이</span><br>지역별 예약 안내</h1>
-    <p class="hero-lead">수지, 기흥, 처인, 죽전, 동백, 역북, 기흥역, 수지구청역, 에버라인 주요 생활권별 방문 가능 지역과 예약 전 확인사항을 안내합니다.</p>
-    <div class="hero-cta">
-      <a href="#coverage" class="btn btn-primary">지역별 안내 보기</a>
-      <a href="#stations" class="btn btn-secondary">가까운 역 찾기</a>
-      <a href="/reservation/" class="btn btn-secondary">예약 안내 보기</a>
-      <a href="/check/" class="btn btn-secondary">이용 전 확인사항</a>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">용인시 전지역 방문 관리</div>
+      <h1 class="hero-title">용인 출장마사지<br><span class="hero-accent">용인 홈타이</span><br>지역별 예약 안내</h1>
+      <p class="hero-lead">수지, 기흥, 처인, 죽전, 동백, 역북, 기흥역, 수지구청역, 에버라인 주요 생활권별 방문 가능 지역과 예약 전 확인사항을 안내합니다.</p>
+      <div class="hero-cta">
+        <a href="#all-regions" class="btn btn-primary">전지역 안내 보기</a>
+        <a href="#stations" class="btn btn-secondary">가까운 역 찾기</a>
+        <a href="/reservation/" class="btn btn-secondary">예약 안내 보기</a>
+        <a href="/check/" class="btn btn-secondary">이용 전 확인사항</a>
+      </div>
+      <ul class="hero-stats">
+        <li class="stat"><span class="stat-number">3</span><span class="stat-label">구별 안내</span></li>
+        <li class="stat"><span class="stat-number">36</span><span class="stat-label">지역 페이지</span></li>
+        <li class="stat"><span class="stat-number">24</span><span class="stat-label">역세권 안내</span></li>
+        <li class="stat"><span class="stat-number">24H</span><span class="stat-label">상담 가능</span></li>
+      </ul>
     </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-number">3</div>
-      <div class="stat-label">구별 안내</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">30</div>
-      <div class="stat-label">지역 페이지</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">24</div>
-      <div class="stat-label">역세권 안내</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">24H</div>
-      <div class="stat-label">상담 가능</div>
-    </div>
+    <aside class="hero-aside">
+      <figure class="hero-visual">
+        <img src="/assets/hero.webp" width="1200" height="900" alt="용인 출장마사지·홈타이 프리미엄 방문 관리 공간" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption>용인 전지역 방문 · 24시간 예약 상담</figcaption>
+      </figure>
+      <!--HERO_REGIONS-->
+    </aside>
   </div>
 </div>"""
 
